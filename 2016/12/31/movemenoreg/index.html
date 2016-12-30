@@ -90,7 +90,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/12/31/movemenoreg/index.html">
 <meta property="og:site_name" content="zer0like's Blog">
 <meta property="og:description" content="近期在学校周围火速窜起一种将U盘文件变为一个以U盘名字命名的快捷方式的病毒。貌似传染速度非常快，以下是解决方式及病毒原理的基本分析">
-<meta property="og:updated_time" content="2016-12-30T19:21:56.000Z">
+<meta property="og:updated_time" content="2016-12-30T19:29:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="movemenoreg.vbs病毒的处理">
 <meta name="twitter:description" content="近期在学校周围火速窜起一种将U盘文件变为一个以U盘名字命名的快捷方式的病毒。貌似传染速度非常快，以下是解决方式及病毒原理的基本分析">
@@ -253,7 +253,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-31T00:30:12+08:00" content="2016-12-31">
+            <time itemprop="dateCreated" datetime="2016-12-31T03:29:54+08:00" content="2016-12-31">
               2016-12-31
             </time>
           </span>
@@ -319,16 +319,16 @@
 <h3 id="0x02-病毒特征及其感染范围"><a href="#0x02-病毒特征及其感染范围" class="headerlink" title="0x02 病毒特征及其感染范围"></a>0x02 病毒特征及其感染范围</h3><hr>
 <p>vbs病毒：利用vb(virtual basic)的脚本语言vbs编写的病毒程序，具有简单易懂，可修改性强的特点。顾其感染范围也限制在<code>Window</code>平台的电脑上。</p>
 <p>中毒后的U盘目录结构：</p>
-<p>[未隐藏]<code>U盘名.lnk</code>                快捷方式   病毒启动点</p>
-<p>[隐    藏]<code>_</code>                             文件夹      包含U盘里的原始文件</p>
-<p>[隐    藏]<code>WindowsServices</code>      文件夹      包含病毒流程文件</p>
+<p>[未隐藏] <strong><code>U盘名.lnk</code></strong>                快捷方式   病毒启动点</p>
+<p>[隐&emsp;藏] <strong><code>_</code></strong>                     文件夹      包含U盘里的原始文件</p>
+<p>[隐&emsp;藏] <strong><code>WindowsServices</code></strong>      文件夹      包含以下病毒流程文件</p>
 <ul>
 <li>install.vbs</li>
 <li>helper.vbs</li>
 <li>movemenoreg.vbs</li>
 </ul>
 <h3 id="0x03-一般处理步骤"><a href="#0x03-一般处理步骤" class="headerlink" title="0x03 一般处理步骤"></a>0x03 一般处理步骤</h3><hr>
-<p>1.<strong>[插入U盘后没有点击.lnk文件]</strong>只要在window或者mac上直接勾选显示隐藏文件，将<code>WindowsServices文件夹</code>和<code>.lnk</code>文件直接删除即可去除病毒，同时将<code>_文件夹</code>下的内容拷贝出来。<br>2.<strong>[插入U盘后点击了.lnk文件]</strong>处理步骤分以下几步：<br>    2.1 先将U盘内病毒文件删除。<br>    2.2 <code>ctl+Alt+Del</code> 调出任务管理器，将<code>helper.vbs</code>进程终止。<br>    2.3 <code>window + r</code> 输入%AppData%，在打开的文件夹里勾选显示隐藏文件，会看到<code>WindowsServices文件夹</code>将该文件夹内容删除。<br>    2.4 <code>window + r</code> 输入shell:startup ，将里面的helper的快捷方式删除。<br>    2.5 至此处理完成</p>
+<p>1.<strong>[插入U盘后没有点击.lnk文件]</strong>只要在window或者mac上直接勾选显示隐藏文件，将<code>WindowsServices文件夹</code>和<code>.lnk</code>文件直接删除即可去除病毒，同时将<code>_文件夹</code>下的内容拷贝出来。<br>2.<strong>[插入U盘后点击了.lnk文件]</strong>处理步骤分以下几步：<br>&emsp;&ensp;2.1 先将U盘内病毒文件删除。<br>&emsp;&ensp;2.2 <code>ctl+Alt+Del</code> 调出任务管理器，将<code>helper.vbs</code>进程终止。<br>&emsp;&ensp;2.3 <code>window + r</code> 输入%AppData%，在打开的文件夹里勾选显示隐藏文件，会看到<code>WindowsServices文件夹</code>将该文件夹内容删除。<br>&emsp;&ensp;2.4 <code>window + r</code> 输入shell:startup ，将里面的helper的快捷方式删除。<br>&emsp;&ensp;2.5 至此处理完成</p>
 <h3 id="0x04-vbs病毒源码的简单分析"><a href="#0x04-vbs病毒源码的简单分析" class="headerlink" title="0x04 vbs病毒源码的简单分析"></a>0x04 vbs病毒源码的简单分析</h3><hr>
 <figure class="highlight vb"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">‘由于代码长度过长，只提取核心部分</span><br><span class="line"></span><br><span class="line">没用过vbs的只能现学现卖了<span class="number">23333</span>🙈🙈🙈</span><br><span class="line">明天更，，写不动了</span><br></pre></td></tr></table></figure>
 <h3 id="0x05-vbs病毒启动流程"><a href="#0x05-vbs病毒启动流程" class="headerlink" title="0x05 vbs病毒启动流程"></a>0x05 vbs病毒启动流程</h3><hr>
