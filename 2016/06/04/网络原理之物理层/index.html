@@ -1,0 +1,691 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="http://fonts.useso.com/css?family=Droid+Serif:400italic,700italic,400,700/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="物理层" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="关于网络原理物理层相关知识点总结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络原理之物理层">
+<meta property="og:url" content="http://yoursite.com/2016/06/04/网络原理之物理层/index.html">
+<meta property="og:site_name" content="zer0like's Blog">
+<meta property="og:description" content="关于网络原理物理层相关知识点总结">
+<meta property="og:updated_time" content="2016-06-04T06:30:13.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="网络原理之物理层">
+<meta name="twitter:description" content="关于网络原理物理层相关知识点总结">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 网络原理之物理层 | zer0like's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">zer0like's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">2333</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                网络原理之物理层
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-04T10:34:18+08:00" content="2016-06-04">
+              2016-06-04
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/网络/" itemprop="url" rel="index">
+                    <span itemprop="name">网络</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/04/网络原理之物理层/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/04/网络原理之物理层/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv">本文总阅读量
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>关于网络原理物理层相关知识点总结</p>
+<a id="more"></a>
+<h3 id="0x01-概述"><a href="#0x01-概述" class="headerlink" title="0x01 概述"></a>0x01 概述</h3><hr>
+<p>物理层(Physical Layer),是激活、维持、关闭通信端点之间的<code>机械特性</code>、<code>电器特性</code>、<code>功能特性</code>以及<code>过程特性</code>。<br>物理层最重要的两个设备:<code>中继器(Repater,也称放大器)</code>和<code>集线器</code>。</p>
+<h3 id="0x02-主要任务"><a href="#0x02-主要任务" class="headerlink" title="0x02 主要任务"></a>0x02 主要任务</h3><hr>
+<p>1.确保原始的数据可在各种物理层媒体上传输;<br>2.为上层协议提供支持;<br>3.确定四种特性：<br>    <code>机械特性</code>：指明接口所用接线器的尺寸、引脚数目等。<br>    <code>电气特性</code>：指明在接口电缆的各条线上出现的电压范围。<br>    <code>功能特性</code>：指明某条线上出现的某一电平电压的意义。<br>    <code>过程特性</code>：指明对于不同功能的各种可能事件的出现顺序。</p>
+<h3 id="0x03-常见术语"><a href="#0x03-常见术语" class="headerlink" title="0x03 常见术语"></a>0x03 常见术语</h3><hr>
+<p><code>消息（message）</code>：通信的目的是传送消息;<br><code>数据（data）</code>&emsp;&ensp;：运送消息的实体;<br><code>信号（signal）</code>&ensp;：数据的电气或电磁的表现;<br>&emsp;&emsp;&emsp;—&gt;<code>模拟信号(连续信号)</code>：代表消息的参数的取值是连续的。<br>&emsp;&emsp;&emsp;—&gt;<code>数字信号(离散信号)</code>：代表消息的参数的取值是离散的。<br><code>码元（symbol）</code>&ensp;：在数字通信中常常用时间隔相同的符号来表示一位二进制数字。这样的时间间隔内的信号称为二进制码元，间隔被称为码元长度。当码元的离散状态有大于2个时(如M大于2个)时，此码元称为M进制码元;</p>
+<h3 id="0x04-通信的三种方式"><a href="#0x04-通信的三种方式" class="headerlink" title="0x04 通信的三种方式"></a>0x04 通信的三种方式</h3><hr>
+<p><strong><code>单工通信（单工通信）</code></strong>&emsp;&emsp;&emsp;：单方向通信没有反方向的交互。<br><strong><code>双向交替通信（半双通信）</code></strong>&emsp;：通信双方都可以发送消息，但<strong>不能同时</strong>发送，也<strong>不能同时</strong>接收。<br><strong><code>双向同时通信（全双工通信）</code></strong>：通信双方可同时发送和接收消息。</p>
+<h3 id="0x05-基带信号和调制"><a href="#0x05-基带信号和调制" class="headerlink" title="0x05 基带信号和调制"></a>0x05 基带信号和调制</h3><hr>
+<p><strong><code>基带信号</code></strong>：来自信源的信号即基本频带信号<br><strong><code>调制(modulation)</code></strong><br>&emsp;&emsp;—&gt;<strong><code>基带调制</code></strong>：仅仅对基带信号的波形进行变换，使它能够与信道特性相适应。变换后仍然是基带信号。<br>&emsp;&emsp;—&gt;<strong><code>带通调制</code></strong>：1.使用载波器(carrier)进行调制，把基带信号的频率范围搬移到较高的频段以便在信道中<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;传输。经过载波器调制后的信号称为<code>带通信号</code>。<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;2.最基本的带通调制方法：<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;—&gt;<strong><code>调幅(AM)</code></strong>载波的增幅随基带数字信号而改变。<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;—&gt;<strong><code>调频(FM)</code></strong>载波的频率随基带数字信号而变化。<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;—&gt;<strong><code>调相(PM)</code></strong>载波的初始相位随基带数字信号而变化。</p>
+<h3 id="0x06-几个极限容量相关公式及准则"><a href="#0x06-几个极限容量相关公式及准则" class="headerlink" title="0x06 几个极限容量相关公式及准则"></a>0x06 几个极限容量相关公式及准则</h3><p><strong><code>奈氏准则</code></strong>：在任何信道中，码元传输的速率是有上限的，传输速率超过此上限，就会出现严重的码间串扰问题，使接收端对码元的识别成为不可能。一般取2倍的带宽作为上限<br><strong><code>信噪比</code></strong>：信号的平均功率和噪声的平均功率之比(常记做S/N)<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$信噪比(dB)= 10 \times \log _{10} {(S/N)}$ &emsp; $(dB)$</p>
+<p><strong><code>香农公式</code></strong>：信道的极限信息传输速率$C$：<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$C = W \times \log _{2} {(1+S/N)}$ &emsp; $(b/s)$</p>
+<p><strong><code>波特率与数据传输率之间的关系</code></strong>：<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$C = B \times \log _2 M$ &emsp; $(b/s)$<br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;其中$C$为数据传输速率，$B$为码元，$M$为编码级数</p>
+<h3 id="0x07-常用传输媒体"><a href="#0x07-常用传输媒体" class="headerlink" title="0x07 常用传输媒体"></a>0x07 常用传输媒体</h3><hr>
+<p>$$<br>\begin{cases}<br>导向传输媒体 {\begin{cases}<br>    双绞线 {\begin{cases}<br>        屏蔽双绞线STP(Shielded Twisted Pair)：具有屏蔽层(由金属网编制) \\<br>        无屏蔽双绞线UTP(Unshielded Twisted Pair)：没有屏蔽层<br>        \end{cases}}\\<br>    同轴电缆：绝缘保护套层，外导体屏蔽层，绝缘层，内导体\\<br>    光缆 {\begin{cases}<br>        多模光纤：允许多条不同角度的入射光线\\<br>    单模光纤：一条光线传播(距离更远，衰耗极小)<br>    \end{cases}}<br>    \end{cases}}\\<br>非导向传输媒体{\begin{cases}<br>    短波通信(高频通信):主要依靠电离层的反射 \\<br>    无线电微波通信:空间中直线传播{\begin{cases}<br>        地面微波接力通信 \\<br>        卫星通信 \\<br>    \end{cases}}<br>    \end{cases}}<br>\end{cases}<br>$$</p>
+<h3 id="0x08-信道复用技术"><a href="#0x08-信道复用技术" class="headerlink" title="0x08 信道复用技术"></a>0x08 信道复用技术</h3><hr>
+<p><strong><code>目的</code></strong>：提高信道利用率<br>分为：<code>频分复用</code>，<code>时分复用</code>，<code>统计时分复用</code>，<code>波分复用</code>，<code>码分复用</code></p>
+<p><strong><code>频分复用 FDM(Frequency Division Multiplexing)</code></strong> ：即所有用户在同样的时间占据不同的带宽资源<br><strong><code>时分复用 TDM(Time Division Multiplexing)</code></strong> ：即所有用户在不同的时间使用同样的频带宽度<br><strong><code>统计时分复用 STDM(Statistic TDM)</code></strong> ：改进型时分复用，按动态分配时隙，又称<code>异步时分复用</code><br><strong><code>波分复用 WDM(Wavelength Division Multiplexing)</code></strong>：一根光纤上复用两路光载波信号。现在有更多的复用，称为<code>密集波分复用</code><br><strong><code>码分复用 CDM(Code Division Multiplexing)</code></strong>：每个用户选择不同的<code>码型</code>，各用户之间不干扰。</p>
+<h3 id="0x09-总结"><a href="#0x09-总结" class="headerlink" title="0x09 总结"></a>0x09 总结</h3><hr>
+<p>以上是计算机网络物理层相关内容<br>大家可以复习参考<br>理解不到位的地方，希望提出意见2333🙈🙈<br>可以在底下直接评论。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/网络原理/" rel="tag">#网络原理</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/03/RSA相关及爆破/" rel="next" title="RSA加密解密相关及爆破">
+                <i class="fa fa-chevron-left"></i> RSA加密解密相关及爆破
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/07/网络原理之数据链路层/" rel="prev" title="网络原理之数据链路层">
+                网络原理之数据链路层 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/04/网络原理之物理层/"
+           data-title="网络原理之物理层" data-url="http://yoursite.com/2016/06/04/网络原理之物理层/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="zer0like" />
+          <p class="site-author-name" itemprop="name">zer0like</p>
+          <p class="site-description motion-element" itemprop="description">personal_blog</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/zer0like" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#0x01-概述"><span class="nav-number">1.</span> <span class="nav-text">0x01 概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x02-主要任务"><span class="nav-number">2.</span> <span class="nav-text">0x02 主要任务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x03-常见术语"><span class="nav-number">3.</span> <span class="nav-text">0x03 常见术语</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x04-通信的三种方式"><span class="nav-number">4.</span> <span class="nav-text">0x04 通信的三种方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x05-基带信号和调制"><span class="nav-number">5.</span> <span class="nav-text">0x05 基带信号和调制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x06-几个极限容量相关公式及准则"><span class="nav-number">6.</span> <span class="nav-text">0x06 几个极限容量相关公式及准则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x07-常用传输媒体"><span class="nav-number">7.</span> <span class="nav-text">0x07 常用传输媒体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x08-信道复用技术"><span class="nav-number">8.</span> <span class="nav-text">0x08 信道复用技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x09-总结"><span class="nav-number">9.</span> <span class="nav-text">0x09 总结</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">zer0like</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">本站访客数<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次</span>
+  
+
+  
+    <span class="site-pv">本站总访问量<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"zer0like"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+
+  
+  
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+
+</body>
+</html>
